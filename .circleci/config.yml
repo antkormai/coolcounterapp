@@ -4,17 +4,13 @@ jobs:
   build:
     working_directory: /coolcounterapp
     docker:
-      - image: docker:18.06.3-ce-git
+      - image: node:8.16.0-jessie
     steps:
       - checkout
       - setup_remote_docker
       - run:
-          name: Install dependencies
-          command: |
-            apk add --no-cache nodejs
-            npm install docker-compose
+          name: install-angular
+          command: 'sudo npm install -g angular@7.3.0'
       - run:
-          name: Run lint
-          command: |
-            docker-compose up -d
-            docker-compose run coolcounterapp ng lint
+          name: ng-lint
+          command: 'ng lint'
