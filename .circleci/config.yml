@@ -4,7 +4,7 @@ jobs:
   build:
     working_directory: /coolcounterapp
     docker:
-      - image: node:8.16.0-jessie
+      - image: circleci/node:4.8.2
     steps:
       - checkout
       - setup_remote_docker
