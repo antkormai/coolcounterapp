@@ -1,0 +1,41 @@
+.button1 {
+    background: #77dd77;
+    @extend %button-placeholder;
+}
+
+.button2 {
+    background: #ff6961;
+    @extend %button-placeholder;
+
+    &.disabled {
+        background: #ccc;
+        color: #999;
+    }
+}
+
+.container {
+    width: 800px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+%button-placeholder {
+    padding: 80px;
+    display: inline-block;
+    margin: 10px;
+    color: #fff;
+    font-size:26px;
+    font-weight: bold;
+    cursor: pointer;
+    border:none;
+}
+
+.counter {
+    width: 200px;
+    margin: 40px auto;
+    border: 2px solid #ccc;
+    padding: 40px;
+    color: #333;
+    font-weight: bold;
+    font-size: 40px;
+}

@@ -5,6 +5,16 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'counter';
+  counter = 0;
+  decreaseDisabledFlag = true;
+
+  increase() {
+    this.counter++;
+  }
+
+  decrease() {
+    this.counter--;
+  }
 }

@@ -1,5 +1,6 @@
 <div class="container">
   <h2>Welcome to our COOL app</h2>
-  <div class="button1" (click)="increase()">+</div>
-  <div class="button2" (click)="decrease()">-</div>
+  <button class="button1" (click)="increase()">+</button>
+  <button class="button2" (click)="decrease()" [disabled]="decreaseDisabledFlag" [ngClass]="{'disabled': decreaseDisabledFlag}">-</button>
+  <div class="counter">{{counter}}</div>
 </div>
