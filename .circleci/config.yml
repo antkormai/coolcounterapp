@@ -6,7 +6,7 @@ jobs:
         working_directory: ~/project
         docker:
             - image: circleci/node:8.16-jessie-browsers
-            - image: golang:1.6.4-jessie
+            - image: docker:17.05.0-ce-git
         steps:
             # Checkout the code from the branch into the working_directory
             - checkout
