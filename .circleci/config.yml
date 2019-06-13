@@ -30,4 +30,4 @@ jobs:
             - run:
                 name: Building
                 command: |
-                    npm run build-prod
+                    npm run build --prod
