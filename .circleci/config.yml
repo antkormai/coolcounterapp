@@ -10,6 +10,7 @@ jobs:
         steps:
             # Checkout the code from the branch into the working_directory
             - checkout
+            - setup_remote_docker
             # Log the current branch
             - run:
                 name: Show current branch
