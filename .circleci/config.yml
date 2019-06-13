@@ -6,12 +6,9 @@ jobs:
         working_directory: ~/project
         docker:
             - image: circleci/node:8.16-jessie-browsers
-            - image: docker:17.05.0-ce-git
         steps:
             # Checkout the code from the branch into the working_directory
             - checkout
-            - setup_remote_docker:
-                docker_layer_caching: true
             # Log the current branch
             - run:
                 name: Show current branch
@@ -34,11 +31,3 @@ jobs:
                 name: Building
                 command: |
                     npm run build --prod
-            - deploy:
-                name: Push application Docker image
-                command: |
-                    docker login -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
-                    docker tag coolcounterapp $DOCKER_HUB_USER_ID/coolcounterapp:$CIRCLE_SHA1
-                    docker tag coolcounterapp $DOCKER_HUB_USER_ID/coolcounterapp:latest
-                    docker push $DOCKER_HUB_USER_ID/coolcounterapp:$CIRCLE_SHA1
-                    docker push $DOCKER_HUB_USER_ID/coolcounterapp:latest
