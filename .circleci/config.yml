@@ -7,7 +7,7 @@ jobs:
         docker:
             - image: circleci/node:8.16-jessie-browsers
         steps:
-            setup_remote_docker
+            - setup_remote_docker
             # Checkout the code from the branch into the working_directory
             - checkout
             # Log the current branch
