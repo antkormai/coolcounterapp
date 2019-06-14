@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   counter = 0;
-  decreaseDisabledFlag = true;
+  decreaseDisabledFlag = false;
 
   increase() {
     this.counter++;
