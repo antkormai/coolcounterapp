@@ -35,9 +35,9 @@ jobs:
             - run:
                 name: Dockerhub Publish
                 command: |
-                    docker build -t coolcounterapp .                    
-                    docker tag coolcounterapp $DOCKER_HUB_USER_ID/coolcounterapp:$CIRCLE_SHA1
-                    docker tag coolcounterapp $DOCKER_HUB_USER_ID/coolcounterapp:latest
-                    docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
-                    docker push $DOCKER_HUB_USER_ID/coolcounterapp:$CIRCLE_SHA1
-                    docker push $DOCKER_HUB_USER_ID/coolcounterapp:latest        
+                    sudo docker build -t coolcounterapp .                    
+                    sudo docker tag coolcounterapp $DOCKER_HUB_USER_ID/coolcounterapp:$CIRCLE_SHA1
+                    sudo docker tag coolcounterapp $DOCKER_HUB_USER_ID/coolcounterapp:latest
+                    sudo docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
+                    sudo docker push $DOCKER_HUB_USER_ID/coolcounterapp:$CIRCLE_SHA1
+                    sudo docker push $DOCKER_HUB_USER_ID/coolcounterapp:latest        
