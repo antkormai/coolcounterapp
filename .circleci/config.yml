@@ -14,10 +14,20 @@ jobs:
             - run:
                 name: Show current branch
                 command: echo ${CIRCLE_BRANCH}
+            # Restore local dependencies from cache
+            - restore_cache:
+                keys:
+                - coolcounterapp-dependencies-{{ checksum "package.json" }}
+                - coolcounterapp-dependencies-
             # Install project dependencies
             - run:
                 name: Install local dependencies
                 command: npm install
+            # Cache local dependencies if they don't exist
+            - save_cache:
+                key: coolcounterapp-dependencies-{{ checksum "package.json" }}
+                paths:
+                    - node_modules                
             # Lint the source code
             - run:
                 name: Linting
